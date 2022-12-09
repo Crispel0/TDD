@@ -1,4 +1,4 @@
-package br.com.subasta.dominio;
+package col.com.subasta.dominio;
 
 public class Usuario {
 

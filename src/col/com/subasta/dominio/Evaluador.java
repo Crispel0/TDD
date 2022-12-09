@@ -1,4 +1,4 @@
-package br.com.subasta.dominio;
+package col.com.subasta.dominio;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ public class Evaluador {
 			if (oferta.getValor() > mayorQueTodos) {
 				mayorQueTodos = oferta.getValor();
 			} 
-				if(oferta.getValor() < menorQueTodos) {
+			if(oferta.getValor() < menorQueTodos) {
 					menorQueTodos = oferta.getValor();
 				}
 			}
@@ -36,7 +36,7 @@ public class Evaluador {
 				return 0; //si son iguales retorname 0//			
 			}});
 																							
-		ofertasMayores = ofertasMayores.subList(0, 3); //toma el la primerOferta por indice//
+		ofertasMayores = ofertasMayores.subList(0, 2); //toma el la primerOferta por indice//
 		}
 	
 	
