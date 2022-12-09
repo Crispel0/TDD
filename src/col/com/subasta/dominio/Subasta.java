@@ -15,17 +15,26 @@ public class Subasta {
 	}
 	
 	public void propone(Oferta oferta) {
+		//obtiene cada oferta segun la List<Oferta>;
+		int total = getTotalOfertas(oferta.getUsuario(), ofertas);
+		if (ofertas.isEmpty() || 
+		ElMismoUsuarioAnterior(oferta.getUsuario()) && total < 5) {
+		ofertas.add(oferta);}
+	}
+	
+	private int getTotalOfertas(Usuario usuario, List<Oferta> ofertas) {
 		int total = 0;
-		for(Oferta listaOfertas: ofertas) { //si mi Ofertas es igual a oferta parametro entonces agrega suma al total;
-			if(listaOfertas.getUsuario().equals(oferta.getUsuario())) {
+		for(Oferta listaOfertas: ofertas) { 
+			if(listaOfertas.getUsuario().equals(usuario)) {
 				total ++;
 			} 
-			
-		}
+	}
+		return total;
 		
-		//si la oferta esta vacia o el usuario actual es diferente del usuario anterior agregalo y es menos a 5 el total//
-		if(ofertas.isEmpty() || ofertas.get(ofertas.size()-1).getUsuario().equals(oferta.getUsuario()) && total < 5){
-		ofertas.add(oferta);}
+	}
+	
+	private boolean ElMismoUsuarioAnterior(Usuario usuario) {
+		return !ofertas.get(ofertas.size()-1).getUsuario().equals(usuario);
 	}
 
 	public String getDescripcion() {
