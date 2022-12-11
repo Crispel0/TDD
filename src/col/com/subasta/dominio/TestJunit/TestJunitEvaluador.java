@@ -64,9 +64,9 @@ public class TestJunitEvaluador {
 			evaluador.evalua(subasta);
 			
 			Assert.assertEquals(evaluador.getOfertasMayores().size(), 3);
+			Assert.assertEquals(evaluador.getOfertasMayores().get(0).getValor(), 250000.00);
 			Assert.assertEquals(evaluador.getOfertasMayores().get(1).getValor(), 300000.00);
 			Assert.assertEquals(evaluador.getOfertasMayores().get(2).getValor(), 450000.00);
-			Assert.assertEquals(evaluador.getOfertasMayores().get(3).getValor(), 500000.00);
 		}
 		
 	}
