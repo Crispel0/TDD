@@ -15,6 +15,8 @@ public class TestJunitNuevasReglasNegocio {
   * 2. No acepte mas de 5 ofertas por el mismo Usuario
   */
 	
+	
+	
 	@Test
 	public void Aceptar1OfertaPorUsuarioConsecutiva() {
 		Usuario Alejandria = new Usuario(1 , "Alejandria");
@@ -77,6 +79,6 @@ public class TestJunitNuevasReglasNegocio {
 		
 		subasta.DuplicarOferta(julian);
 
-		assert.assertEquals(4000, subasta.getOfertas().get(2).getValor(),0.00001);
+		assert.assertEquals()
 }
 }
