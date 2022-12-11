@@ -79,6 +79,6 @@ public class TestJunitNuevasReglasNegocio {
 		
 		subasta.DuplicarOferta(julian);
 
-		assert.assertEquals()
+		//assert.assertEquals()
 }
 }

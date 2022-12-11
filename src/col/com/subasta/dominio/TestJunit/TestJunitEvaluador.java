@@ -3,6 +3,7 @@ package col.com.subasta.dominio.TestJunit;
 import org.junit.Before;
 import org.junit.Test;
 
+import Builder.ConstruirSubasta;
 import col.com.subasta.dominio.Evaluador;
 import col.com.subasta.dominio.Oferta;
 import col.com.subasta.dominio.Subasta;
@@ -16,21 +17,10 @@ public class TestJunitEvaluador {
 	@Before
 	public void  prepararEscenario() {
 		
-		Usuario diego = new Usuario(1, "Diego");
-		Usuario alexiz = new Usuario(2, "Alexiz");
-		Usuario daniel = new Usuario(3, "Daniel");
-		
-		Oferta oferta1 = new Oferta(diego, 2456841.00);
-		Oferta oferta2 = new Oferta(alexiz, 2454531.00);
-		Oferta oferta3 = new Oferta(daniel, 1457612.00);
-		
-		Subasta subasta = new Subasta("Auto");
-		subasta.propone(oferta1);
-		subasta.propone(oferta2);
-		subasta.propone(oferta3);
-		
-		this.subasta = subasta;
-		
+		this.subasta = subasta = new ConstruirSubasta().para("Bicicleta").oferta(new Usuario("diego"), 250000).
+				oferta(new Usuario("Alexis"), 300000).
+				oferta(new Usuario("daniel"), 450000).
+				Creador();
 	}
 	
 	@Test
