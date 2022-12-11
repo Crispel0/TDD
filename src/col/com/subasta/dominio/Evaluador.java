@@ -36,7 +36,7 @@ public class Evaluador {
 				return 0; //si son iguales retorname 0//			
 			}});
 																							
-		ofertasMayores = ofertasMayores.subList(0, 2); //toma el la primerOferta por indice//
+		ofertasMayores = ofertasMayores.subList(0, 3); //toma el la primerOferta por indice//
 		}
 	
 	

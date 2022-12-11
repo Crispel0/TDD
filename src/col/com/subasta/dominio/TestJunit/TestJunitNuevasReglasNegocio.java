@@ -1,4 +1,7 @@
 package col.com.subasta.dominio.TestJunit;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import col.com.subasta.dominio.Oferta;
@@ -59,7 +62,21 @@ public class TestJunitNuevasReglasNegocio {
 		
 		Assert.assertEquals(subasta.getOfertas().size(),10);
 		
-		
-		
 	}
+	
+	@Test
+	public void duplicaOfertaAnterior() {
+
+		Subasta subasta = new Subasta("LED Televisor");
+		
+		Usuario juliana = new Usuario(1 , "Juliana");
+		Usuario julian = new Usuario(2, "Julian");
+		
+		subasta.propone(new Oferta(julian, 20000.00));
+		subasta.propone(new Oferta(juliana, 30000.00));
+		
+		subasta.DuplicarOferta(julian);
+
+		assert.assertEquals(4000, subasta.getOfertas().get(2).getValor(),0.00001);
+}
 }
