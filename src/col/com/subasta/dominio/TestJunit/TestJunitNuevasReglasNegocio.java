@@ -1,13 +1,14 @@
 package col.com.subasta.dominio.TestJunit;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
 import col.com.subasta.dominio.Oferta;
 import col.com.subasta.dominio.Subasta;
 import col.com.subasta.dominio.Usuario;
-import junit.framework.Assert;
 
 public class TestJunitNuevasReglasNegocio {
  /*
@@ -29,7 +30,10 @@ public class TestJunitNuevasReglasNegocio {
 		subasta.propone(ofertaAlejandria2);
 		subasta.propone(ofertaAlejandria3);
 	
-		Assert.assertEquals(subasta.getOfertas().size(), 1);; //Evalua que el tamaño de las ofertas no sea mayor que 1
+		
+		assertThat(subasta.getOfertas().size(), equalTo(1));//Evalua que el tamaño de las ofertas no sea mayor que 1
+ 
+
 	}
 	@Test
 	public void AceptarMaximo5Ofertas() {
@@ -62,7 +66,7 @@ public class TestJunitNuevasReglasNegocio {
 		subasta.propone(oferta10);
 		subasta.propone(oferta11);
 		
-		Assert.assertEquals(subasta.getOfertas().size(),10);
+		assertThat(subasta.getOfertas().size(), equalTo(5));
 		
 	}
 	
@@ -79,6 +83,6 @@ public class TestJunitNuevasReglasNegocio {
 		
 		subasta.DuplicarOferta(julian);
 
-		//assert.assertEquals();
+		assertThat(subasta.getOfertas().toString(), equalTo(40000.0));
 }
 }

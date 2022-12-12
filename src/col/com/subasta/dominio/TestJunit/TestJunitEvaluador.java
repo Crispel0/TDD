@@ -1,6 +1,8 @@
 package col.com.subasta.dominio.TestJunit;
 
+
 import org.junit.Before;
+
 import org.junit.Test;
 
 import Builder.ConstruirSubasta;
@@ -8,7 +10,9 @@ import col.com.subasta.dominio.Evaluador;
 import col.com.subasta.dominio.Oferta;
 import col.com.subasta.dominio.Subasta;
 import col.com.subasta.dominio.Usuario;
-import junit.framework.Assert;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.CoreMatchers.equalTo;
+
 
 public class TestJunitEvaluador {
 	
@@ -31,9 +35,8 @@ public class TestJunitEvaluador {
 		System.out.println(evaluador.getMenorQueTodos());
 		
 		//El parametro delta es usado para redondear el valor double 0.00001
-		Assert.assertEquals(450000, evaluador.getMayorQueTodos(),0.00001);
-		Assert.assertEquals(250000, evaluador.getMenorQueTodos(),0.00001);
-		
+		assertThat(evaluador.getMayorQueTodos(), equalTo(450000.0));
+		assertThat(evaluador.getMenorQueTodos(), equalTo(250000.0));
 	}
 	
 		@Test
@@ -44,8 +47,8 @@ public class TestJunitEvaluador {
 			System.out.println(evaluador.getMayorQueTodos());
 			System.out.println(evaluador.getMenorQueTodos());
 																//param. Operador Delta-Redondeo a entero un decimal//
-			Assert.assertEquals(450000, evaluador.getMayorQueTodos(), 0.00001);
-			Assert.assertEquals(250000, evaluador.getMenorQueTodos(), 0.00001);
+			assertThat(evaluador.getMayorQueTodos(), equalTo(450000.0));
+			assertThat(evaluador.getMenorQueTodos(), equalTo(250000.0));
 			
 	}
 		
@@ -63,10 +66,13 @@ public class TestJunitEvaluador {
 			Evaluador evaluador = new Evaluador();
 			evaluador.evalua(subasta);
 			
-			Assert.assertEquals(evaluador.getOfertasMayores().size(), 3);
-			Assert.assertEquals(evaluador.getOfertasMayores().get(0).getValor(), 250000.00);
-			Assert.assertEquals(evaluador.getOfertasMayores().get(1).getValor(), 300000.00);
-			Assert.assertEquals(evaluador.getOfertasMayores().get(2).getValor(), 450000.00);
+			
+			assertThat(evaluador.getOfertasMayores().size(), equalTo(3));
+			assertThat(evaluador.getOfertasMayores().get(0).getValor(), equalTo(250000.0));
+			assertThat(evaluador.getOfertasMayores().get(1).getValor(), equalTo(300000.0));
+			assertThat(evaluador.getOfertasMayores().get(2).getValor(), equalTo(450000.0));
 		}
+		
+		
 		
 	}
