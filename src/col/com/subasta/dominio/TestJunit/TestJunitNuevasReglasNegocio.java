@@ -1,5 +1,5 @@
 package col.com.subasta.dominio.TestJunit;
-import static org.junit.Assert.assertArrayEquals;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
@@ -79,6 +79,6 @@ public class TestJunitNuevasReglasNegocio {
 		
 		subasta.DuplicarOferta(julian);
 
-		//assert.assertEquals()
+		//assert.assertEquals();
 }
 }

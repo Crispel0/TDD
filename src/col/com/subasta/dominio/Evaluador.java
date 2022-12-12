@@ -13,6 +13,9 @@ public class Evaluador {
 	
 	
 	public void evalua(Subasta subasta) {
+		if(subasta.getOfertas().isEmpty()) {
+			throw new RuntimeException("No puedo crear una subasta sin ofertas");
+		}
 		for (Oferta oferta : subasta.getOfertas()) {
 			if (oferta.getValor() > mayorQueTodos) {
 				mayorQueTodos = oferta.getValor();
